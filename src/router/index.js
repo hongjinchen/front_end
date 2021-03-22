@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Page0 from "../components/page0.vue"
+import Home from "../components/Home.vue"
 import Page1 from '../components/Page1.vue'
 import Page2 from '../components/Page2.vue'
 import SearchBar from '../components/SearchBar.vue'
@@ -8,12 +8,12 @@ Vue.use(VueRouter)
 
 const routes = [{
     path: "/",
-    redirect: "Page0",
+    redirect: "Home",
   },
   {
-    path: '/Page0',
-    name: 'Page0',
-    component: Page0,
+    path: '/Home',
+    name: 'Home',
+    component: Home,
   },
   {
     path: '/Page1',
