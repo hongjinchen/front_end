@@ -4,18 +4,12 @@ import Export from "../components/Export.vue"
 import Page1 from '../components/Page1.vue'
 import Page2 from '../components/Page2.vue'
 import SearchBar from '../components/SearchBar.vue'
-import Home from '../components/Home.vue'
 Vue.use(VueRouter)
 
 const routes = [{
     path: "/",
-    redirect: "Home",
+    redirect: "Export",
   },
-  
-  { path: '/Home',
-  name: 'Home',
-  component: Home,
-},
   {
     path: '/Export',
     name: 'Export',
