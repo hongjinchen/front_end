@@ -29,7 +29,8 @@ const routes = [{
     path: '/SearchBar',
     name: 'SearchBar',
     component: SearchBar,
-  }
+  },
+  
 ]
 const router = new VueRouter({
   mode: 'history',
