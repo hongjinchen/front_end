@@ -1,7 +1,7 @@
 <template>
   <div id="page">
     <searchBar></searchBar>
-    <h1>我是主页就</h1>
+    <h1>我是主页</h1>
   </div>
 </template>
 
