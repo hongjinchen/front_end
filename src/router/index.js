@@ -4,12 +4,8 @@ import Export from "../components/Export.vue"
 import Page1 from '../components/Page1.vue'
 import Page2 from '../components/Page2.vue'
 import SearchBar from '../components/SearchBar.vue'
-<<<<<<< HEAD
-import Register from '../components/Register.vue'
-=======
 import slideshow from '../components/slideshow.vue'
 
->>>>>>> b2e6452216be3ef1f6109d15c59fabb581d2aa4d
 Vue.use(VueRouter)
 
 const routes = [{
@@ -37,15 +33,9 @@ const routes = [{
     component: SearchBar,
   },
   {
-<<<<<<< HEAD
-    path: '/Register',
-    name: 'Register',
-    component: Register,
-=======
     path: '/slideshow',
     name: 'slideshow',
     component: slideshow,
->>>>>>> b2e6452216be3ef1f6109d15c59fabb581d2aa4d
   },
   
 ]
