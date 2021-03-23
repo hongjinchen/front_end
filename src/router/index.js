@@ -4,6 +4,8 @@ import Export from "../components/Export.vue"
 import Page1 from '../components/Page1.vue'
 import Page2 from '../components/Page2.vue'
 import SearchBar from '../components/SearchBar.vue'
+import slideshow from '../components/slideshow.vue'
+
 Vue.use(VueRouter)
 
 const routes = [{
@@ -29,6 +31,11 @@ const routes = [{
     path: '/SearchBar',
     name: 'SearchBar',
     component: SearchBar,
+  },
+  {
+    path: '/slideshow',
+    name: 'slideshow',
+    component: slideshow,
   },
   
 ]
