@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
 <template>
   <div id="page1">
     <div class="contactUs">
@@ -7,13 +8,16 @@
           <div class="word1">OUR MISSION</div>
           <span class="word2">OUR VISION</span>
         </div>
-        <div>
-      
-        </div>
+        <div></div>
         <img class="shiming" src="../assets/shiming.png" />
         <label></label>
         <img class="yuanjing" src="../assets/bushu.png" />
-        
+      </div>
+      <div class="form">
+        <a class="word3">您也可以通过填写下方表格联系我们</a>
+        <input class='word4' v-model="message" placeholder="如何称呼您" />
+        <input class='word5' v-model="email" placeholder="您的联系邮箱" />
+        <input class='word6' v-model="phone" placeholder="您的联系电话" />
       </div>
     </div>
   </div>
@@ -28,8 +32,8 @@ export default {
 <style scoped>
 #page1 {
   background: white;
-  height: 600px;
-  width: 100%;
+  height: 100%;
+
   margin: 0;
   padding: 0;
 }
@@ -77,23 +81,86 @@ label {
   position: absolute;
   padding-left: 15%;
   padding-top: 100px;
-  font-size:30px;
+  font-size: 30px;
   color: rgba(48, 70, 92, 100);
   font-weight: 400;
   font-family: Roboto;
   letter-spacing: 0.6px;
 }
 
-
 .word2 {
   position: absolute;
   padding-left: 72%;
   padding-top: 100px;
-  font-size:30px;
+  font-size: 30px;
   color: rgba(48, 70, 92, 100);
   font-weight: 400;
   font-family: Roboto;
   letter-spacing: 0.6px;
+}
 
+/* 表格绘制 */
+.form {
+  background-color: rgba(235, 122, 103, 100);
+  height: 331px;
+  position: relative;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+}
+.word3 {
+  font-size: 20px;
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 60px;
+  line-height: 23px;
+  font-family: Roboto;
+  color: rgba(255, 255, 255, 100);
+}
+.word4{
+  width: 340px;
+  height: 41px;
+  border-radius: 10px;
+  background-color: rgba(253, 252, 252, 40);
+  color: rgba(210, 111, 108, 66);
+  font-size: 14px;
+  text-align: left;
+  font-family: PingFang SC;
+  border: 1px solid rgba(255, 255, 255, 100);
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 120px;
+  padding-left: 10px;
+}
+.word5{
+  width: 340px;
+  height: 41px;
+  border-radius: 10px;
+  background-color: rgba(253, 252, 252, 40);
+  color: rgba(210, 111, 108, 66);
+  font-size: 14px;
+  text-align: left;
+  font-family: PingFang SC;
+  border: 1px solid rgba(255, 255, 255, 100);
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 180px;
+  padding-left: 10px;
+}
+.word6{
+  width: 340px;
+  height: 41px;
+  border-radius: 10px;
+  background-color: rgba(253, 252, 252, 40);
+  color: rgba(210, 111, 108, 66);
+  font-size: 14px;
+  text-align: left;
+  font-family: PingFang SC;
+  border: 1px solid rgba(255, 255, 255, 100);
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 240px;
+  padding-left: 10px;
 }
 </style>
