@@ -3,8 +3,8 @@
     <ul>
       <li>
         <router-link to="/" exact>HOME</router-link>
-        <router-link to="/page1" exact>CONTACT</router-link>
-        <router-link to="/page2" exact> PERSONAL </router-link>
+        <router-link to="/contact" exact>CONTACT</router-link>
+        <router-link to="/personal" exact> PERSONAL </router-link>
         <img src="../assets/lingdang.png" />
       </li>
     </ul>
