@@ -1,12 +1,18 @@
 <template>
   <div id="page">
-    <h1>我是主页</h1>
+    <div style="left: 537px;">
+      <searchBar></searchBar>
+    </div>
   </div>
 </template>
 
 <script>
+import SearchBar from './SearchBar'
 export default {
   name: 'Export',
+  components: {
+    "searchBar": SearchBar
+  }
 }
 </script>
 
@@ -15,7 +21,7 @@ export default {
   margin: 0;
   padding: 0;
   background: pink;
-  height: 600px;
+  height: 1440px;
   width: 100%;
 }
 </style>

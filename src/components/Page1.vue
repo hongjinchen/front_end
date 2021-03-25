@@ -26,6 +26,9 @@
 <script>
 export default {
   name: "page1",
+  // data:{
+
+  // }
 };
 </script>
 
@@ -118,7 +121,7 @@ label {
   font-family: Roboto;
   color: rgba(255, 255, 255, 100);
 }
-.word4{
+.word4 {
   width: 340px;
   height: 41px;
   border-radius: 10px;
@@ -133,7 +136,7 @@ label {
   margin-top: 120px;
   padding-left: 10px;
 }
-.word5{
+.word5 {
   width: 340px;
   height: 41px;
   border-radius: 10px;
@@ -148,7 +151,7 @@ label {
   margin-top: 180px;
   padding-left: 10px;
 }
-.word6{
+.word6 {
   width: 340px;
   height: 41px;
   border-radius: 10px;

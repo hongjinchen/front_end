@@ -1,13 +1,8 @@
 <template>
-  <div>
-    <!-- <div style="padding: 10%;">
-    <div class="searchBar">
-      <v-card style="padding:10px; background-color: rgba(247, 208, 214, 84);border-radius: 50px 50px 50px 50px;">
-        <v-text-field label="Search for gift..." light single-line solo class="pt-7 search-xs" background-color="#EE7D79" append-icon="mdi-magnify" rounded>
-        </v-text-field>
-      </v-card>
-    </div> -->
-    <!-- ? -->
+  <div style=" 
+  background: pink;
+  height: 1440px;
+  width: 100%;">
     <div id="cover">
       <form method="get" action="">
         <div class="tb">
@@ -23,107 +18,24 @@
         </div>
       </form>
     </div>
-    <div style="margin-top=10px">
-      <v-card class="RelatedReasult" v-if="showRelatedReasult" v-for="(item, index) in relatedGift">
-        <v-card-text @click="enterRelatedReasult(item.gift_name)">
-          {{item.gift_name}}
-        </v-card-text>
-      </v-card>
+    <div>
+
     </div>
   </div>
+
 </template>
 
 <script>
 export default {
-  name: 'SearchBar',
+  name: 'Search',
   data () {
     return {
-      infoSearch: "",
-      // loading: false,
-      showRelatedReasult: false,
-      relatedGift: [{
-        gift_name: "末日卤蛋",
-      },
-      {
-        gift_name: "狂鼠",
-
-      },
-      {
-        gift_name: "天使姐姐",
-      },
-      {
-        gift_name: "安娜姐姐",
-      }
-      ],
     }
   },
-  watch: {
-    infoSearch (val, oldVal) {
-      if (val.length == 0) {
-        this.showRelatedReasult = false
-      } else {
-        this.showRelatedReasult = true;
-        this.relatedGift.forEach((item, index) => {
-          if (item.indexOf(val) >= 0) {
-            relatedGift.unshift(item)
-          }
-        })
-        this.infoSearch = relatedGift;
-      }
-    }
-  },
-  // watch: {
-  //   infoSearch (newinfoSearch, oldinfoSearch) {
-  //     if (newinfoSearch != oldinfoSearch) {    // 对比输入前后data变化，如果存在变化则请求后端返回新的礼物联想list
-  //       this.axios({
-  //         method: "get",
-  //         url: this.$store.state.host + "suggestion/",
-  //       })
-  //         .then((res) => {
-  //           this.showRelatedReasult = true;
-  //           this.relatedGift = res.data.data;
-  //         })
-  //         .catch((error) => {
-  //           alert("失败了QAQ")
-  //         })
-  //     }
-  //   }
-  // },
   methods: {
-    // submitSeachInfo (e) {
-    //   // 提交需要搜素的信息
-    //   this.axios({
-    //     method: "get",
-    //     url: this.$store.state.host + "suggestion/",
-    //     data: this.infoSearch,
-    //   })
-    //     .then((res) => {
-    //       // alert("开始搜索！");
-    //       //弹窗
-    //       // this.loading = false;
-    //       // loading是用来等待的
-    //       this.$router.go(0);
-    //       // 这个是负责刷新页面的
-    //       this.showRealtedReasult = true;
-    //     })
-    //     .catch((error) => {
-    //       // this.$store.commit("response", error);
-    //       // this.loading = false;
-    //       console.log(this.infoSearch);
-    //     });
-    // },
-    moclSubmit () {
-      this.$router.push({ path: "/Search" });
-    },
-    submitSeachInfo (e) {
-      this.showRealtedReasult = true;
-    },
-    enterRelatedReasult (e) {
-      this.infoSearch = e;
-      this.showRelatedReasult = false;
-    }
+
   },
-};
+}
 </script>
 
 <style scoped>
@@ -157,21 +69,22 @@ button {
   color: #fff;
   font-family: Nunito;
   padding: 0;
-  margin: 0;
+  margin-left: 40px;
+  margin-top: -10px;
   border: 0;
   background-color: transparent;
 }
 
 #cover {
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: 0;
   right: 0;
-  width: 550px;
-  padding: 35px;
+  width: 650px;
+  height: 87px;
   margin: -83px auto 0 auto;
   background-color: #ff7575;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
   transform: scale(0.6);
 }
