@@ -1,21 +1,21 @@
 <template>
-  <div id="page2">
-    <h1>我是第二个页面</h1>
+  <div id="page">
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'page2',
+  name: 'page_personal',
 }
 </script>
 
 <style scoped>
-#page2 {
+#page {
   margin: 0;
   padding: 0;
-  background: lightblue;
-  height: 600px;
+  background-color: rgba(255, 255, 255, 0.0);
+  height: 920px;
   width: 100%;
 }
 </style>

@@ -125,7 +125,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 * {
   outline: none;
@@ -169,7 +168,7 @@ button {
   right: 0;
   width: 550px;
   padding: 35px;
-  margin: -83px auto 0 auto;
+  margin: 60px auto 0 auto;
   background-color: #ff7575;
   border-radius: 20px;
   box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
