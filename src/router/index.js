@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import page_export from "../components/page_export";
+import page_export from "../components/page_export.vue";
 import page_contact from '../components/page_contact.vue'
 import page_personal from '../components/page_personal.vue'
 import SearchBar from '../components/SearchBar.vue'
@@ -11,10 +11,6 @@ Vue.use(VueRouter)
 const routes = [{
     path: "/",
     redirect: "Export",
-  },
-  {
-    path: "/test",
-    component: Test,
   },
   {
     path: '/Export',
