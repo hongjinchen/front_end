@@ -1,6 +1,10 @@
 
 <template>
-  <div id="app">
+  <div id="app" v-bind:style="{
+      backgroundImage:'url('+imgSrc+')',
+      backgroundSize:'cover',
+      backgroundAttachment:'fixed'
+    }">
     <navigation></navigation>
     <router-view></router-view>
   </div>
@@ -8,17 +12,32 @@
 
 <script>
 import navigation from './components/navigation'
-import Page1 from './components/Page1'
-import Page2 from './components/Page2'
+import * as ub from './assets/user-background'
+let bgs = ub.setBackground();
 export default {
   name: 'App',
   components: {
     "navigation": navigation,
-    "page1": Page1,
-    "page2": Page2,
-  }
+  },
+  data () {
+    return {
+      imgSrc: null,
+    };
+  },
+  methods: {
+    setUrl () {
+      this.imgSrc = bgs[0].url
+    },
+  },
+  mounted () {
+    this.setUrl();
+  },
 }
 </script>
 
 <style>
+#app {
+  height: auto;
+  width: 100%;
+}
 </style>

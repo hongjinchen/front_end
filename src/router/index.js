@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Export from "../components/Export.vue"
-import Page1 from '../components/Page1.vue'
-import Page2 from '../components/Page2.vue'
+import page_export from "../components/page_export.vue";
+import page_contact from '../components/page_contact.vue'
+import page_personal from '../components/page_personal.vue'
+import SearchBar from '../components/SearchBar.vue'
+import slideshow from '../components/slideshow.vue'
+import Search from '../components/Search.vue';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -12,17 +15,32 @@ const routes = [{
   {
     path: '/Export',
     name: 'Export',
-    component: Export,
+    component: page_export,
   },
   {
-    path: '/Page1',
-    name: 'Page1',
-    component: Page1,
+    path: '/contact',
+    name: 'contact',
+    component: page_contact,
   },
   {
-    path: '/Page2',
-    name: 'Page2',
-    component: Page2,
+    path: '/personal',
+    name: 'personal',
+    component: page_personal,
+  },
+  {
+    path: '/SearchBar',
+    name: 'SearchBar',
+    component: SearchBar,
+  },
+  {
+    path: '/slideshow',
+    name: 'slideshow',
+    component: slideshow,
+  },
+  {
+    path: '/Search',
+    name: 'Search',
+    component: Search,
   },
 ]
 const router = new VueRouter({
