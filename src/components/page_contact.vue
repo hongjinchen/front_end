@@ -42,10 +42,10 @@ export default {
 <style scoped>
 #page {
   background-color: rgba(255, 255, 255, 0.9);
-  height: 100%;
-
+  height: auto;
+  min-height: 1020px;
   margin: 0;
-  padding: 0;
+  padding-top: 60px;
 }
 
 /* 联系我们 */

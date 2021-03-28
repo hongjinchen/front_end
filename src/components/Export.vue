@@ -1,7 +1,9 @@
 <template>
   <div id="page">
-    <div style="left: 537px;">
-      <searchBar></searchBar>
+    <div class="Export">
+      <div>
+        <searchBar></searchBar>
+      </div>
     </div>
   </div>
 </template>
@@ -20,10 +22,10 @@ export default {
 .Export {
   position: static;
   padding: 80px;
-  margin: 120px auto 0 auto;
-  height: 600px;
-  width: 800px;
-  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto 0 auto;
+  height: 580px;
+  width: 100%;
+  background-color: rgba(245, 245, 245, 0.0);
 }
 h1 {
   padding: 0;

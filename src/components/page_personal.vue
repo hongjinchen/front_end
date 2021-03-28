@@ -12,10 +12,10 @@ export default {
 
 <style scoped>
 #page {
-  margin: 0;
-  padding: 0;
-  background-color: rgba(255, 255, 255, 0.0);
-  height: 920px;
+  background-color: rgba(245, 245, 245, 0.5);
   width: 100%;
+  min-height: 1020px;
+  margin: 0;
+  padding-top: 60px;
 }
 </style>

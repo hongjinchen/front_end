@@ -23,7 +23,7 @@
         </div>
       </form>
     </div>
-    <div style="margin-top=10px">
+    <div style="margin-top: 10px">
       <v-card class="RelatedReasult" v-if="showRelatedReasult" v-for="(item, index) in relatedGift">
         <v-card-text @click="enterRelatedReasult(item.gift_name)">
           {{item.gift_name}}
@@ -162,17 +162,14 @@ button {
 }
 
 #cover {
-  position: absolute;
-  top: 15%;
-  left: 0;
-  right: 0;
-  width: 550px;
+  position: static;
+  width: 1600px;
   padding: 35px;
-  margin: 60px auto 0 auto;
+  margin: 0px auto 0 auto;
   background-color: #ff7575;
   border-radius: 20px;
   box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
-  transform: scale(0.6);
+  transform: scale(0.4);
 }
 
 form {
