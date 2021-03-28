@@ -6,6 +6,8 @@ import page_personal from '../components/page_personal.vue'
 import SearchBar from '../components/SearchBar.vue'
 import slideshow from '../components/slideshow.vue'
 import Search from '../components/Search.vue';
+import Register from '../components/Register.vue';
+import login from '../components/login.vue';
 Vue.use(VueRouter)
 
 const routes = [{
@@ -41,6 +43,16 @@ const routes = [{
     path: '/Search',
     name: 'Search',
     component: Search,
+  },
+  {
+    path: '/Register',
+    name: 'Register',
+    component: Register,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: login,
   },
 ]
 const router = new VueRouter({

@@ -1,29 +1,21 @@
 <template>
   <div>
-    <!-- <div style="padding: 10%;">
-    <div class="searchBar">
-      <v-card style="padding:10px; background-color: rgba(247, 208, 214, 84);border-radius: 50px 50px 50px 50px;">
-        <v-text-field label="Search for gift..." light single-line solo class="pt-7 search-xs" background-color="#EE7D79" append-icon="mdi-magnify" rounded>
-        </v-text-field>
-      </v-card>
-    </div> -->
-    <!-- ? -->
     <div id="cover">
-      <form method="get" action="">
-        <div class="tb">
-          <div class="td"><input type="text" v-model="infoSearch" placeholder="Search for gift..." required></div>
-          <div class="td" id="s-cover">
-            <router-link to="/Search" exact>
-              <button type="submit">
-                <div id="s-circle"></div>
-                <span></span>
-              </button>
-            </router-link>
-          </div>
+      <div class="tb">
+        <div class="td">
+          <input type="text" v-model="keyOfGift" placeholder="Search for gift..." required>
         </div>
-      </form>
+        <div class="td" id="s-cover">
+          <router-link v-bind:to="{ path:'Search', query: { keyOfGift}}">
+            <button @click="submit" :loading="loading" :disabled="loading">
+              <div id="s-circle"></div>
+              <span></span>
+            </button>
+          </router-link>
+        </div>
+      </div>
     </div>
-    <div style="margin-top: 10px">
+    <div class="autocomplete">
       <v-card class="RelatedReasult" v-if="showRelatedReasult" v-for="(item, index) in relatedGift">
         <v-card-text @click="enterRelatedReasult(item.gift_name)">
           {{item.gift_name}}
@@ -38,23 +30,10 @@ export default {
   name: 'SearchBar',
   data () {
     return {
-      infoSearch: "",
-      // loading: false,
+      loading: false,
+      keyOfGift: "",
       showRelatedReasult: false,
-      relatedGift: [{
-        gift_name: "末日卤蛋",
-      },
-      {
-        gift_name: "狂鼠",
-
-      },
-      {
-        gift_name: "天使姐姐",
-      },
-      {
-        gift_name: "安娜姐姐",
-      }
-      ],
+      relatedGift: [],
     }
   },
   watch: {
@@ -72,60 +51,29 @@ export default {
       }
     }
   },
-  // watch: {
-  //   infoSearch (newinfoSearch, oldinfoSearch) {
-  //     if (newinfoSearch != oldinfoSearch) {    // 对比输入前后data变化，如果存在变化则请求后端返回新的礼物联想list
-  //       this.axios({
-  //         method: "get",
-  //         url: this.$store.state.host + "suggestion/",
-  //       })
-  //         .then((res) => {
-  //           this.showRelatedReasult = true;
-  //           this.relatedGift = res.data.data;
-  //         })
-  //         .catch((error) => {
-  //           alert("失败了QAQ")
-  //         })
-  //     }
-  //   }
-  // },
   methods: {
-    // submitSeachInfo (e) {
-    //   // 提交需要搜素的信息
-    //   this.axios({
-    //     method: "get",
-    //     url: this.$store.state.host + "suggestion/",
-    //     data: this.infoSearch,
-    //   })
-    //     .then((res) => {
-    //       // alert("开始搜索！");
-    //       //弹窗
-    //       // this.loading = false;
-    //       // loading是用来等待的
-    //       this.$router.go(0);
-    //       // 这个是负责刷新页面的
-    //       this.showRealtedReasult = true;
-    //     })
-    //     .catch((error) => {
-    //       // this.$store.commit("response", error);
-    //       // this.loading = false;
-    //       console.log(this.infoSearch);
-    //     });
-    // },
-    moclSubmit () {
-      this.$router.push({ path: "/Search" });
+    submit () {
+      this.$axios({
+        method: "get",
+        url: "http://fooxking.net:9000/search/" + this.keyOfGift,
+      })
+        .then((res) => {
+          this.relatedGift = res.data;
+          console.log("啊啊啊啊成功");
+        })
+        .catch((error) => {
+          console.log("失败了！");
+        });
     },
-    submitSeachInfo (e) {
-      this.showRealtedReasult = true;
-    },
-    enterRelatedReasult (e) {
-      this.infoSearch = e;
-      this.showRelatedReasult = false;
-    }
   },
 };
 </script>
 <style scoped>
+.autocomplete {
+  display: inherit;
+  margin-top: 280px;
+  margin-left: 30%;
+}
 * {
   outline: none;
 }
@@ -163,13 +111,14 @@ button {
 
 #cover {
   position: static;
-  width: 1600px;
-  padding: 35px;
-  margin: 0px auto 0 auto;
+  width: 604px;
+  height: 130px;
+  padding: 15px;
+  margin: 0 auto 0 auto;
   background-color: #ff7575;
   border-radius: 20px;
   box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
-  transform: scale(0.4);
+  transform: scale(0.6);
 }
 
 form {
@@ -179,7 +128,9 @@ form {
 input[type="text"] {
   width: 100%;
   height: 96px;
-  font-size: 60px;
+  font-size: 40px;
+  margin-top: -30px;
+  margin-left: 20px;
   line-height: 1;
 }
 
@@ -196,16 +147,16 @@ button {
   position: relative;
   display: block;
   width: 84px;
-  height: 96px;
+  height: 135px;
   cursor: pointer;
 }
 
 #s-circle {
   position: relative;
-  top: -8px;
+  top: -30px;
   left: 0;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   margin-top: 0;
   border-width: 15px;
   border: 15px solid #fff;

@@ -1,16 +1,16 @@
 <template>
-  <div id="nav_group">
-    <nav>
-      <ul>
-        <li>
-          <router-link to="/" exact>HOME</router-link>
-          <router-link to="/contact" exact>CONTACT</router-link>
-          <router-link to="/personal" exact> PERSONAL </router-link>
-          <img src="../assets/lingdang.png"/>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+      <li>
+        <router-link to="/" exact>HOME</router-link>
+        <router-link to="/contact" exact>CONTACT</router-link>
+        <router-link to="/personal" exact> PERSONAL </router-link>
+        <router-link to="/Register" exact> REGISTER </router-link>
+        <router-link to="/Login" exact> LOGIN </router-link>
+        <img src="../assets/lingdang.png" />
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -27,7 +27,8 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 17px 10px;
+  margin: 0 10px;
+  margin-top: 17px; /*上边距*/
   text-align: right;
 }
 img {
@@ -35,7 +36,6 @@ img {
   text-align: right;
   margin-right: 28px;
   margin-left: 10px;
-
 }
 
 a {
@@ -53,11 +53,6 @@ nav {
   left: 0px;
   top: 0px;
   text-align: right;
-}
-#nav_group{
-  position: fixed;
-  width: 100%;
-  z-index: 10;
 }
 /*选中则发生一些变化*/
 .router-link-active {
